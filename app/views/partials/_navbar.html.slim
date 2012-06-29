@@ -1,0 +1,11 @@
+.navbar.navbar-fixed-top
+  .navbar-inner
+    .container
+      /a.brand href=root_url Local 27 Retirees
+      ul.nav
+        - nav_items.each do |item|
+          li{class=(active_nav == item["label"] && "active")}
+            = link_to item["label"], "#{item["url"]}"
+      ul.nav.current-user.pull-right
+        = render "partials/login"
+

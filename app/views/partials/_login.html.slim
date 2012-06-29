@@ -1,0 +1,25 @@
+
+- if logged_in?
+  li.divider-vertical
+  li.dropdown
+    a.dropdown-toggle data-toggle="dropdown" href="#"
+      = current_user.email
+      | &nbsp;
+      b.caret
+    ul.dropdown-menu
+      li
+        a href="/profile"
+          i.icon-user
+          | &nbsp; Profile
+      li
+        a href="/inbox"
+          i.icon-envelope
+          | &nbsp; Inbox
+          | &nbsp;
+          span.badge.badge-important 3
+      li.divider
+      li
+        a href="/logout"
+          i.icon-off
+          | &nbsp; Logout
+

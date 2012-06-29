@@ -1,0 +1,9 @@
+
+h2 Edit Photo Set
+
+= form_for [:admin, @photo_set], :html => { :class => "form-horizontal" }, :builder => TwitterBootstrapFormBuilder do |f|
+  = f.text_field :title
+  = f.text_area :description
+
+  .form-actions
+    = f.submit "Save Photo Set"

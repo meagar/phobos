@@ -1,0 +1,21 @@
+doctype 5
+html
+  head
+    title Local27retirees
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+
+    = stylesheet_link_tag "/bootstrap/css/bootstrap"
+    = javascript_include_tag "/bootstrap/js/bootstrap"
+
+    = javascript_include_tag "/javascripts/jquery-ui-1.8.21.custom.min.js"
+  body class=body_classes
+    .container
+
+      = render "partials/navbar"
+
+      /- if flash[:notice]
+      /.alert.alert-success
+        | This is a test of the alert succes thing
+      = yield

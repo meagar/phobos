@@ -1,0 +1,3 @@
+li.span3.photo data-id=photo.id
+  = link_to photo.image.url, :class => "thumbnail" do
+    = image_tag(photo.image.url(:thumb))

@@ -1,0 +1,8 @@
+
+h2 Threads
+
+ul#forums
+  - @forums.each do |thread|
+    = render thread
+
+= link_to "New Forum", new_admin_forum_path

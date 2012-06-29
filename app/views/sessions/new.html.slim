@@ -1,0 +1,31 @@
+
+.row.login-form
+  .span5
+    h2 Returning Users
+    p.instructions Login below with your email and password.
+
+    = form_for @user, :url => login_path, :method => :post, :html => { :class => "well form-horizontal" }, :builder => TwitterBootstrapFormBuilder do |f|
+
+      = f.text_field :email, :label => "Email Address"
+      = f.password_field :password
+
+      .form-actions
+        = f.submit "Login", :class => "btn btn-primary"
+        = link_to "Forgot Password"
+
+  .span2
+    h2.or OR
+
+  .span5
+    h2 First Time Users
+    p.instructions Fill out the following form to create a new account.
+
+    = form_for @new_user, :html => { :class => "well form-horizontal" }, :builder => TwitterBootstrapFormBuilder do |f|
+      = f.text_field :email, :label => "Email Address"
+      = f.text_field :first_name
+      = f.text_field :last_name
+      = f.password_field :password
+      = f.password_field :password_confirmation, :label => "Retype Password"
+
+      .form-actions
+        = f.submit "Create Account", :class => "btn btn-primary"

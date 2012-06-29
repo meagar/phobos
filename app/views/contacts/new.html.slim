@@ -1,0 +1,6 @@
+
+h1 Create Contact
+
+= form_for @contact do |f|
+  = render "form", :contact => @contact, :f => f
+  = f.submit "Create"

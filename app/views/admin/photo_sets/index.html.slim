@@ -1,0 +1,13 @@
+
+h2 Photo Sets
+
+= link_to "New Photo Set", new_admin_photo_set_url
+ul#photo-sets.thumbnails
+  = render @photo_sets
+
+javascript:
+  $(function () {
+    $('ul#photo-sets').sortable_gallery({
+      url: '#{sort_admin_photo_sets_path.html_safe}'
+    });
+  });
