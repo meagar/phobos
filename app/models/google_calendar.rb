@@ -6,7 +6,7 @@ class GoogleCalendar
     def calendar
       return @calendar if @calendar
 
-      auth = YAML::load_file(Rails.root.join("config", "gdata.yml"))[Rails.env]
+      auth = YAML::load_file(Rails.root.join("config", "google_calendar.yml"))[Rails.env]
 
       service = GCal4Ruby::Service.new
 
