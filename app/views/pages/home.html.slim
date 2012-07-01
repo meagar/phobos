@@ -1,3 +1,21 @@
 .hero-unit
   h1 Local 27 Retirees
 
+.row
+  .span9
+    h2 News
+    ul.news
+      li
+        | Lorem Whats it
+  .span3
+    h2 Coming Up
+    ul.events
+      - GoogleCalendar::events.first(5).each do |event|
+        li.event
+          h3 = event.title
+          .date
+            = event.start_time.strftime("%A %B %e")
+            |&nbsp;&nbsp;&nbsp;
+            = event.start_time.strftime("%l:%M %p")
+            |&nbsp;to&nbsp;
+            = event.end_time.strftime("%l:%M %p")

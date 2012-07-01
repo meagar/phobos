@@ -10,8 +10,8 @@
       = f.password_field :password
 
       .form-actions
-        = f.submit "Login", :class => "btn btn-primary"
-        = link_to "Forgot Password"
+        = f.submit "Login", :class => "btn btn-primary btn-large"
+        = link_to "Forgot Password", "#", :class => "forgot-password"
 
   .span2
     h2.or OR
@@ -28,4 +28,4 @@
       = f.password_field :password_confirmation, :label => "Retype Password"
 
       .form-actions
-        = f.submit "Create Account", :class => "btn btn-primary"
+        = f.submit "Create Account", :class => "btn btn-primary btn-large"
