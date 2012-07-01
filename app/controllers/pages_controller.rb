@@ -7,6 +7,18 @@ class PagesController < ApplicationController
   end
 
   def contact
+    @contact = ContactRequest.new
+  end
+
+  def submit_contact
+    @contact = ContactRequest.new(params[:contact_request])
+
+    if @contact.valid?
+      flash[:contact_sent] = true
+      redirect_to :contact
+    else
+      render :contact
+    end
   end
 
   protected

@@ -1,20 +1,28 @@
-= section "Contact" do
+= section "Contact Us" do
 
   .row
     .span9
       p
         | We welcome your questions and comments. Please feel free to contact the
-        | local by phone or by filling in the automatic e-mail form below
+        |  local by phone or by filling in the automatic e-mail form below
 
-      = form_tag :builder => TwitterBootstrapFormBuilder do
-        = text_field_tag :email
+      = form_for @contact, :url => contact_url, :html => { :class => "well" } do |f|
+        - if flash[:contact_sent]
+          .alert.alert-success
+            h3 Submission Sent
+            p Your contact request has been submitted, and we'll reply as soon as possible.
+        = f.text_field :email
+        = f.text_area :feedback
+        .form-actions
+          = f.submit "Contact", :class => "btn btn-primary btn-large"
 
+        hr
 
-      h3 Privacy Commitment
-      p
-        | E-mails submitted via this form will go directly to the host of this web
-        | site. Your e-mail address will not be shared with any person or any
-        | organization outside of the Local 27 Retirees Chapter Executive.
+        h3 Privacy Commitment
+        p
+          | E-mails submitted via this form will go directly to the host of this web
+          |  site. Your e-mail address will not be shared with any person or any
+          |  organization outside of the Local 27 Retirees Chapter Executive.
 
     .span2.well
       address

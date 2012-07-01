@@ -9,6 +9,7 @@ Local27retirees::Application.routes.draw do
   controller :pages do
     get "home"
     get "contact"
+    post "contact", :action => "submit_contact"
     get "contacts"
     get "calendar"
     get "who-we-are" => "pages#who_we_are"
@@ -29,6 +30,7 @@ Local27retirees::Application.routes.draw do
   #
 
   namespace :admin do
+    resources :news_posts
     resources :forums
     resources :photo_sets do
       put "sort", :on => :collection
