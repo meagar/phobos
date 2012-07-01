@@ -1,5 +1,19 @@
 module ApplicationHelper
 
+  def form_for (*args)
+    args << {} unless args.last.is_a? Hash
+
+    args.last[:builder] ||= TwitterBootstrapFormBuilder
+    args.last[:html] ||= {}
+    args.last[:html][:class] ||= ""
+
+    if !args.last[:html][:class].match(/form-(horizontal|vertical)/)
+      args.last[:html][:class] = ["form-horizontal", args.last[:html][:class]].join(" ")
+    end
+
+    super
+  end
+
   def body_classes
     "#{controller.controller_name}-#{controller.action_name}"
   end
