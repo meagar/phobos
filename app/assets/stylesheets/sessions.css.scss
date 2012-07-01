@@ -13,9 +13,8 @@
 
   p.instructions { text-align:center; margin-bottom:20px; }
 
-  .form-horizontal {
-    label.control-label { width:110px; }
-    .controls { margin-left:130px; }
-    input[type=text],input[type=password] { width:190px; }
+  a.forgot-password {
+    margin-left:20px;
   }
+
 }
