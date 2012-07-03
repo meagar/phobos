@@ -2,8 +2,75 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "includes";
+
 body {
   padding-top:60px;
+}
+
+.pages-home {
+  header {
+    text-align:center;
+    margin-bottom:40px;
+    color:$header-color;
+    font-family:serif;
+
+    h1, h2, h3 {
+      border-bottom:none;
+    }
+
+    h1 {
+      text-indent:-100em;
+      overflow:hidden;
+      display:block;
+      width:400px;
+      height:173px;
+      background:url(caw-logo.png);
+      margin:0 auto;
+    }
+    h2 {
+      font-size:200%;
+    }
+    h3 {
+      font-size:120%;
+    }
+  }
+  .span3 {
+    text-align:justify;
+  }
+  .news, .events, .gallery {
+    h2 {
+      text-align:center;
+      border-bottom:1px solid #ddd;
+      margin-bottom:20px;
+    }
+  }
+  ul.events {
+    padding:0; margin:0;
+
+    li {
+      clear:both;
+      list-style-type:none;
+      border-bottom:1px solid #ddd;
+      padding: 10px 5px;
+      .date {
+        float:left;
+      }
+      .time {
+        float:right;
+      }
+      &.more {
+        font-weight:bold;
+        text-align:right;
+        border-bottom:none;
+      }
+      .clear { clear:both; }
+    }
+  }
+
+  .gallery {
+    padding-top:50px;
+  }
 }
 
 .pages-calendar {
@@ -15,13 +82,4 @@ body {
   }
 }
 
-ul.events {
-  padding:0; margin:0;
-
-  li {
-    list-style-type:none;
-    border-bottom:1px solid #ddd;
-    padding: 10px 0;
-  }
-}
 

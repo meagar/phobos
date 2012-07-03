@@ -2,13 +2,16 @@ doctype 5
 html
   head
     title Local27retirees
-    = stylesheet_link_tag    "application"
+
     = javascript_include_tag "application"
-    = csrf_meta_tags
 
     = stylesheet_link_tag "/bootstrap/css/bootstrap"
     = stylesheet_link_tag "/bootstrap/css/bootstrap-responsive"
     = javascript_include_tag "/bootstrap/js/bootstrap"
+
+    = stylesheet_link_tag    "application"
+    = csrf_meta_tags
+
 
     = javascript_include_tag "/javascripts/jquery-ui-1.8.21.custom.min.js"
   body class=body_classes
@@ -18,13 +21,13 @@ html
 
       - if flash[:notice]
         .alert.alert-success
-          button.close x
           = flash[:notice]
         javascript:
           $(function () {
-            setTimeout(function () {
-              $('.alert').slideUp('slow');
-            }, 2000);
+            $('.alert').click(function (event) {
+              event.preventDefault();
+              $(this).slideUp('slow');
+            });
           });
 
       = yield

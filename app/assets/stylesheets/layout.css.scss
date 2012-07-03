@@ -1,0 +1,13 @@
+
+@import "includes";
+
+.alert {
+  cursor:pointer;
+}
+
+.navbar.navbar-fixed-top {
+  .navbar-inner {
+    background-color:$header-color;
+  }
+}
+

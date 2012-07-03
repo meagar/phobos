@@ -1,7 +1,9 @@
 
 h2 Photo Sets
 
-= link_to "New Photo Set", new_admin_photo_set_url
+= admin_opts do |a|
+  = a.link_to "New Photo Set", new_admin_photo_set_url
+
 ul#photo-sets.thumbnails
   = render @photo_sets
 

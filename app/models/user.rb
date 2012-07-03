@@ -6,9 +6,13 @@ class User < ActiveRecord::Base
   has_many :photo_sets, :foreign_key => :created_by_id
   has_many :photos, :foreign_key => :created_by_id
 
+  has_many :news_posts, :foreign_key => :created_by_id
+
   has_secure_password
 
-  attr_accessible :email, :first_name, :last_name, :password, :password_confirmation
+  scope :newsletter_subscribers, where(:newsletter => true)
+
+  attr_accessible :email, :display_name, :password, :password_confirmation, :newsletter
 
   validates :email, :presence => true, :uniqueness => true
   validates :first_name, :last_name, :presence => true
@@ -16,5 +20,9 @@ class User < ActiveRecord::Base
 
   def self.authenticate email, password
     find_by_email(email).try(:authenticate, password)
+  end
+
+  def admin?
+    true
   end
 end

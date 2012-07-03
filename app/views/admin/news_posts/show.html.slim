@@ -1,0 +1,11 @@
+
+= section "News Post" do
+  = admin_opts do |a|
+    = a.link_to "Edit", [:edit, :admin, @news_post]
+    = a.link_to "Delete", [:admin, @news_post], :method => :delete
+    = a.link_to "Back", admin_news_posts_path
+
+  h2 = @news_post.subject
+
+  .body
+    = markdown @news_post.body

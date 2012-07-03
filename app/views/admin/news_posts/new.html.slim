@@ -1,0 +1,7 @@
+
+= section "New News Posts" do
+  = form_for [:admin, @news_post], :html => { :class => "form-horizontal" } do |f|
+    = render "form", :f => f, :news_post => @news_post
+
+    .form-actions
+      = f.submit "Create News Post"

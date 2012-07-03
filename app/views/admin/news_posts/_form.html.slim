@@ -1,0 +1,6 @@
+= f.text_field :subject
+= f.text_area :body
+hr
+= f.text_field :blurb_subject
+= f.text_area :blurb
+= f.select :front_page_column, %w(1 2 3), :include_blank => true

@@ -3,7 +3,7 @@ class ContactRequest
   extend ActiveModel::Naming
   include ActiveModel::Validations
 
-  attr_accessor :email, :feedback
+  attr_accessor :email, :name, :feedback
 
   validates :email, :format => { :with => /\A.*@.*\..*\z/, :message => "must be valid" }
   validates :feedback, :presence => true

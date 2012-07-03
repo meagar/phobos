@@ -1,16 +1,13 @@
 
 h2 = @photo_set.title
 
-.admin-options
-  = link_to "New Photo", [:new, :admin, @photo_set, :photo]
-  |&nbsp;|&nbsp;
-  = link_to "Edit Photo Set", [:edit, :admin, @photo_set]
-  |&nbsp;|&nbsp;
-  = link_to "Back", admin_photo_sets_path
+= admin_opts do |a|
+  = a.link_to "Back", admin_photo_sets_path
+  = a.link_to "New Photo", [:new, :admin, @photo_set, :photo]
+  = a.link_to "Edit Photo Set", [:edit, :admin, @photo_set]
 
 ul#photo-set.thumbnails
   = render @photo_set.photos
-
 
 javascript:
   $(function () {

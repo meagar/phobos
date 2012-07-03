@@ -1,0 +1,12 @@
+li.event
+  h3 = event.title
+  .date
+    = event.start_time.strftime("%A %B %e")
+    |&nbsp;&nbsp;&nbsp;
+  .time
+    - if event.all_day
+      | All Day
+    - else
+      | #{event.start_time.strftime("%l:%M %p")} to #{event.end_time.strftime("%l:%M %p")}
+  .clear
+

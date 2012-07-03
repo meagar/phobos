@@ -51,9 +51,12 @@ ActiveRecord::Schema.define(:version => 20120629014419) do
   create_table "news_posts", :force => true do |t|
     t.string   "subject"
     t.text     "body"
+    t.integer  "front_page_column"
     t.integer  "created_by_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.string   "blurb_subject"
+    t.text     "blurb"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
   end
 
   add_index "news_posts", ["created_by_id"], :name => "index_news_posts_on_created_by_id"

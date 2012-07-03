@@ -3,5 +3,6 @@ li.span3.photo-set data-id=photo_set.id
   = link_to photo_set, :class => "thumbnail" do
     = image_tag(photo_set.thumbnail.try(:url,:thumb) || "/images/260x180.gif")
 
-  .title
-    h4= photo_set.title
+    .title
+      h4= photo_set.title
+      .date= photo_set.created_at.strftime("%B %d %Y")

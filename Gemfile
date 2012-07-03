@@ -12,6 +12,7 @@ gem 'json'
 gem 'jquery-rails'
 gem 'gcal4ruby'
 gem 'mysql2'
+gem 'redcarpet'
 gem 'rmagick'
 gem 'slim'
 

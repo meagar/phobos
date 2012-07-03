@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
 
   def home
+    @events = GoogleCalendar::events.first(4)
   end
 
   def calendar
