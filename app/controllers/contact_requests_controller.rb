@@ -12,7 +12,7 @@ class ContactRequestsController < ApplicationController
       flash[:contact_sent] = true
       redirect_to new_contact_request_path
     else
-      render :contact
+      render :new
     end
   end
 

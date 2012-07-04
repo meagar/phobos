@@ -15,6 +15,7 @@ gem 'mysql2'
 gem 'redcarpet'
 gem 'rmagick'
 gem 'slim'
+gem 'therubyracer'
 
 # Gems used only for assets and not required
 # in production environments by default.
