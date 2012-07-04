@@ -2,7 +2,7 @@
 class ContactRequestsController < ApplicationController
 
   def new
-    @contact = ContactRequest.new
+    @contact = ContactRequest.new(params[:contact_request])
   end
 
   def create
