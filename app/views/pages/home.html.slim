@@ -7,16 +7,18 @@
     /  h1 Local 27 Retirees
     /img src="/assets/caw-logo.png" width="400"
 
+.row
+  .span6.news
+    .row
+      = render :partial => "news_post", :collection => NewsPost.front_page.limit(2)
 
-  /.who-are-we.span3
+  .who-are-we.span3
     h2 Who Are We?
     p We are retirees from a wide variety of workplaces in the London and surrounding area that form our Local Union.
-    a.more.pull-right href="/who-we-are" More about the Local 27...
 
-.row
-  .span9.news
-    .row
-      = render :partial => "news_post", :collection => NewsPost.front_page
+    p Heavy Manufacturing, Auto Parts Plants, Dealerships, Health Care, Electronic Manufacturing, Adhesive Manufacturing and Hardware all form the units of Local 27.
+
+    a.more href="/who-we-are" More about the Local 27...
 
   .span3.events-sidebar
     h2 Upcoming Events
@@ -25,7 +27,7 @@
       li.more
         = link_to "More Events...", "/calendar"
 
-.row
+/.row
   .span12.gallery
     h2 From the Gallery
     ul.thumbnails

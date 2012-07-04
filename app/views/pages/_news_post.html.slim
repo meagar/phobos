@@ -1,6 +1,6 @@
 .span3
-  h3 = news_post.blurb_subject.blank? ? news_post.subject : news_post.blurb_subject
-  p.date July 16 2012
+  h2 = news_post.blurb_subject.blank? ? news_post.subject : news_post.blurb_subject
+  p.date = news_post.created_at.strftime("%B %-d %Y")
   = markdown news_post.blurb
   = link_to "Full Story...", news_post
 

@@ -15,10 +15,6 @@ body {
     color:$header-color;
     font-family:serif;
 
-    h1, h2, h3 {
-      border-bottom:none;
-    }
-
     h1 {
       text-indent:-100em;
       overflow:hidden;
@@ -37,13 +33,6 @@ body {
   }
   .span3 {
     text-align:justify;
-  }
-  .news, .events, .gallery {
-    h2 {
-      text-align:center;
-      border-bottom:1px solid #ddd;
-      margin-bottom:20px;
-    }
   }
   .gallery {
     padding-top:50px;
@@ -71,8 +60,6 @@ body {
         float:right;
       }
       &.more {
-        font-weight:bold;
-        text-align:right;
         border-bottom:none;
       }
       .clear { clear:both; }
