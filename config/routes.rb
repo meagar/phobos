@@ -6,10 +6,11 @@ Local27retirees::Application.routes.draw do
 
   resources :users
 
+  get  "contact" => "contact_requests#new", :as => "new_contact_request"
+  post "contact" => "contact_requests#create", :as => "contact_requests"
+
   controller :pages do
     get "home"
-    get "contact"
-    post "contact", :action => "submit_contact"
     get "contacts"
     get "calendar"
     get "who-we-are" => "pages#who_we_are"
@@ -19,11 +20,11 @@ Local27retirees::Application.routes.draw do
     resources :photos, :only => %w(show)
   end
 
-  resources :forums do
-    resources :posts do
-      resources :replies
-    end
-  end
+  #resources :forums do
+  #  resources :posts do
+  #    resources :replies
+  #  end
+  #end
 
   #
   # Administrative routes

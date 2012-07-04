@@ -1,6 +1,11 @@
 
 @import "includes";
 
+.form-horizontal textarea {
+  height:5em;
+  width:95%;
+}
+
 .alert {
   cursor:pointer;
 }

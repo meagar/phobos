@@ -19,4 +19,12 @@
       }
     });
   }
+
 })(jQuery);
+
+$(function () {
+  $('.alert').on('click', function (event) {
+    $(this).slideUp('slow');
+    event.preventDefault();
+  });
+});

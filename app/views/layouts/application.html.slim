@@ -22,12 +22,5 @@ html
       - if flash[:notice]
         .alert.alert-success
           = flash[:notice]
-        javascript:
-          $(function () {
-            $('.alert').click(function (event) {
-              event.preventDefault();
-              $(this).slideUp('slow');
-            });
-          });
 
       = yield

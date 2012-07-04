@@ -10,7 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120629014419) do
+ActiveRecord::Schema.define(:version => 20120704005610) do
+
+  create_table "contact_requests", :force => true do |t|
+    t.string   "email"
+    t.string   "name"
+    t.text     "body"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "contacts", :force => true do |t|
     t.string   "name"
@@ -18,8 +26,8 @@ ActiveRecord::Schema.define(:version => 20120629014419) do
     t.string   "phone_home"
     t.string   "phone_mobile"
     t.string   "email"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "forum_posts", :force => true do |t|
@@ -29,8 +37,8 @@ ActiveRecord::Schema.define(:version => 20120629014419) do
     t.string   "created_by"
     t.string   "topic"
     t.string   "body"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   add_index "forum_posts", ["created_by_id"], :name => "index_forum_posts_on_created_by_id"
@@ -42,8 +50,8 @@ ActiveRecord::Schema.define(:version => 20120629014419) do
     t.string   "name"
     t.string   "description"
     t.integer  "position"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   add_index "forums", ["created_by_id"], :name => "index_forums_on_created_by_id"
@@ -66,8 +74,8 @@ ActiveRecord::Schema.define(:version => 20120629014419) do
     t.string   "title"
     t.text     "description"
     t.integer  "position"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   add_index "photo_sets", ["created_by_id"], :name => "index_photo_sets_on_created_by_id"
@@ -78,10 +86,11 @@ ActiveRecord::Schema.define(:version => 20120629014419) do
     t.integer  "created_by_id"
     t.string   "image",         :null => false
     t.string   "title"
+    t.boolean  "is_thumbnail",  :null => false
     t.text     "description"
     t.integer  "position"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   add_index "photos", ["created_by_id"], :name => "index_photos_on_created_by_id"
@@ -91,8 +100,8 @@ ActiveRecord::Schema.define(:version => 20120629014419) do
   create_table "role_assignments", :force => true do |t|
     t.integer  "user_id"
     t.integer  "role_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   add_index "role_assignments", ["role_id"], :name => "index_role_assignments_on_role_id"
@@ -100,17 +109,17 @@ ActiveRecord::Schema.define(:version => 20120629014419) do
 
   create_table "roles", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|
     t.string   "email"
     t.string   "password_digest"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string   "display_name"
+    t.boolean  "newsletter"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
 end

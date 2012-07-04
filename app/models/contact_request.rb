@@ -1,20 +1,7 @@
+class ContactRequest < ActiveRecord::Base
+  attr_accessible :body, :email, :name
 
-class ContactRequest
-  extend ActiveModel::Naming
-  include ActiveModel::Validations
-
-  attr_accessor :email, :name, :feedback
-
-  validates :email, :format => { :with => /\A.*@.*\..*\z/, :message => "must be valid" }
-  validates :feedback, :presence => true
-
-
-  def to_key; []; end
-
-  def initialize(params = {})
-    self.email = params[:email]
-    self.feedback = params[:feedback]
-  end
-
+  validates :name, :presence => true, :length => { :maximum => 255 }
+  validates :email, :format => { :with => /\A.*@.*\..*\z/, :message => "must contain a valid email address" }
+  validates :body, :presence => true
 end
-

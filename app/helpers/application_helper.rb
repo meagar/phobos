@@ -78,7 +78,7 @@ class TwitterBootstrapFormBuilder < ActionView::Helpers::FormBuilder
   end
 
   def errors_for(field)
-    @template.content_tag(:p, "#{field.to_s.titleize} #{object.errors.messages[field].join(",")}",
+    @template.content_tag(:p, "#{object.class.human_attribute_name(field)} #{object.errors.messages[field].join(",")}",
                           :class => "help-block") if object.errors.messages[field].any?
   end
 

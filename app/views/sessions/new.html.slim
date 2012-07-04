@@ -18,14 +18,20 @@
 
   .span5
     h2 First Time Users
-    p.instructions Fill out the following form to create a new account.
+    p.instructions Register for an account by filling out the form below.
 
     = form_for @new_user, :html => { :class => "well form-horizontal" }, :builder => TwitterBootstrapFormBuilder do |f|
       = f.text_field :email, :label => "Email Address"
-      = f.text_field :first_name
-      = f.text_field :last_name
+      = f.text_field :display_name
       = f.password_field :password
       = f.password_field :password_confirmation, :label => "Retype Password"
+
+      .control-group
+        .controls
+          label.checkbox
+            = f.check_box :newsletter
+            | Send me updates about the CAW and local27retirees.ca
+
 
       .form-actions
         = f.submit "Create Account", :class => "btn btn-primary btn-large"
