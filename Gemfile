@@ -6,7 +6,7 @@ gem 'rails', '3.2.6'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'bcrypt-ruby', '~> 3.0.0'
-gem 'carrierwave'
+gem 'carrierwave', '<= 0.6.1'
 gem 'dynamic_form'
 gem 'json'
 gem 'jquery-rails'
