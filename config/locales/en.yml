@@ -15,4 +15,5 @@ en:
     attributes:
       contact_request:
         body: ""
+        email: ""
 
