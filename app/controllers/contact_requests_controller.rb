@@ -16,5 +16,9 @@ class ContactRequestsController < ApplicationController
     end
   end
 
+  def active_nav
+    "Contact Us"
+  end
+
 end
 
