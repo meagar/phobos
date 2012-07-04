@@ -2,5 +2,5 @@
   h3 = news_post.blurb_subject.blank? ? news_post.subject : news_post.blurb_subject
   p.date July 16 2012
   = markdown news_post.blurb
-  a href="#" Full Story...
+  = link_to "Full Story...", news_post
 

@@ -1,14 +1,14 @@
 = section "Contact Us" do
 
   .row
-    .span9
+    .span8
       p
-        | We welcome your questions and comments. Please feel free to contact the
-        |  local by phone or by filling in the automatic e-mail form below
+        | Need to contact the Local? Please use the form below.
+        | We welcome your questions and comments and feedback.
       p
         | We'll get back to you via e-mail at the address specified as soon as possible.
 
-      = form_for @contact, :url => contact_url, :html => { :class => "well" } do |f|
+      = form_for @contact, :html => { :class => "well" } do |f|
         - if flash[:contact_sent]
           .alert.alert-success
             h3 Submission Sent
@@ -27,7 +27,8 @@
           |  site. Your e-mail address will not be shared with any person or any
           |  organization outside of the Local 27 Retirees Chapter Executive.
 
-    .span2.well
+    .span3
+      p The Local can also be reached by phone or mail or by dropping by:
       address
         strong CAW Local 27
         br

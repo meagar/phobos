@@ -6,8 +6,12 @@ Local27retirees::Application.routes.draw do
 
   resources :users
 
+  resources :events, :only => %w(index)
+
   get  "contact" => "contact_requests#new", :as => "new_contact_request"
   post "contact" => "contact_requests#create", :as => "contact_requests"
+
+  resources :news, :only => %w(show), :controller => :news_posts, :as => :news_posts
 
   controller :pages do
     get "home"

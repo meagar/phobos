@@ -15,16 +15,15 @@
 
 .row
   .span9.news
-    h2 In the News
     .row
       = render :partial => "news_post", :collection => NewsPost.front_page
 
-  .span3.events
+  .span3.events-sidebar
     h2 Upcoming Events
     ul.events
       = render :partial => "event", :collection => @events
       li.more
-        = link_to "More Events...", "#"
+        = link_to "More Events...", "/calendar"
 
 .row
   .span12.gallery
@@ -33,7 +32,7 @@
       - (1..4).each do
         li
           a.thumbnail
-            img src="http://placehold.it/256x139"
+            img src="http://placehold.it/260x180"
 
 
 footer

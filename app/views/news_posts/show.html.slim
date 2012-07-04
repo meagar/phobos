@@ -1,0 +1,11 @@
+
+= section @news_post.subject, @news_post.created_at.strftime("%B %-d %Y") do
+  .row
+    .body.span9
+      = markdown @news_post.body
+    .span3.events-sidebar
+      h2 Upcoming Events
+      ul.events
+        = render :partial => "pages/event", :collection => @events
+        li.more
+          = link_to "More Events...", "/calendar"
