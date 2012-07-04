@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :display_name, :password, :password_confirmation, :newsletter
 
   validates :email, :presence => true, :uniqueness => true
-  validates :first_name, :last_name, :presence => true
+  validates :display_name, :presence => true, :length => { :maximum => 255 }
   validates :password, :presence => true
 
   def self.authenticate email, password

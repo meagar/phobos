@@ -9,3 +9,9 @@
 
   .body
     = markdown @news_post.body
+
+
+  .blurb
+    h2 Blurb
+    h3 = @news_post.blurb_subject
+    = markdown @news_post.blurb

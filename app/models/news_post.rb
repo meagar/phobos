@@ -5,7 +5,7 @@ class NewsPost < ActiveRecord::Base
 
   validates :created_by, :presence => true
   validates :subject, :presence => true, :length => { :maximum => 255 }
-  validates :body,    :presence => true, :length => { :maximum => 20000 }
+  validates :body,    :length => { :maximum => 20000 }
 
   validates :blurb_subject, :length => { :maximum => 255 }
   validates :blurb, :length => { :maximum => 10000 }
@@ -23,5 +23,4 @@ class NewsPost < ActiveRecord::Base
       where("id != ?", self.id).
       update_all(:front_page_column => nil)
   end
-
 end

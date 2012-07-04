@@ -1,4 +1,4 @@
 li
   h2 = link_to news_post.subject, [:admin, news_post]
   div.body
-    = news_post.body
+    = markdown(news_post.body.blank? ? news_post.blurb : news_post.body)

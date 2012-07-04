@@ -7,18 +7,18 @@ li.divider-vertical
       | &nbsp;
       b.caret
     ul.dropdown-menu
-      li
+      /li
         a href="/profile"
           i.icon-user
           | &nbsp; Profile
-      li
+      /li
         a href="/inbox"
           i.icon-envelope
           | &nbsp; Inbox
           | &nbsp;
           span.badge.badge-important 3
       - if current_user.admin?
-        li.divider
+        /li.divider
 
         li.admin
           a href="/admin/news_posts"
@@ -36,6 +36,6 @@ li.divider-vertical
         a href="/logout"
           i.icon-off
           | &nbsp; Logout
-- else
-  li
-    a href="/login" Login or Sign Up
+/- else
+/  li
+/    a href="/login" Login or Sign Up
