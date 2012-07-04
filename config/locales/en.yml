@@ -9,6 +9,9 @@ en:
           attributes:
             body:
               blank: "Please enter a question or comment"
+            email:
+              blank: "We require a valid email address in order to respond"
+              invalid: "We require a valid email address in order to respond"
     attributes:
       contact_request:
         body: ""
