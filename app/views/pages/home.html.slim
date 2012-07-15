@@ -27,14 +27,14 @@
       li.more
         = link_to "More Events...", "/calendar"
 
-/.row
+.row
   .span12.gallery
     h2 From the Gallery
     ul.thumbnails
-      - (1..4).each do
+      - PhotoSet.first(4).each do |photo_set|
         li
-          a.thumbnail
-            img src="http://placehold.it/260x180"
+          = link_to photo_set, :class => "thumbnail" do
+            = image_tag(photo_set.thumbnail.try(:url,:thumb) || "/images/260x180.gif")
 
 
 footer
