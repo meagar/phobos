@@ -14,7 +14,7 @@
             h3 Submission Sent
             p Your contact request has been submitted, and we'll reply as soon as possible.
         = f.text_field :name
-        = f.text_field :email
+        = f.text_field :email, :label => "Email"
         = f.text_area :body, :label => "Feedback"
         .form-actions
           = f.submit "Submit Contact Request", :class => "btn btn-primary btn-large"
