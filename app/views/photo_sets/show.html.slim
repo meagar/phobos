@@ -5,9 +5,3 @@
   ul#photo-set.thumbnails
     = render @photo_set.photos
 
-  javascript:
-    $(function () {
-      $('ul#photo-set').sortable_gallery({
-        url: '#{sort_admin_photo_set_photos_path(@photo_set).html_safe}'
-      });
-    });
