@@ -5,3 +5,8 @@
   ul#photo-set.thumbnails
     = render @photo_set.photos
 
+  ul.nav.nav-pills
+    li
+      = link_to photo_sets_path do
+        i.icon-arrow-left
+        | &nbsp;Back
