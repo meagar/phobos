@@ -20,7 +20,7 @@ class Admin::PhotosController < Admin::Controller
 
   def create
     @photo = @photo_set.photos.new(params[:photo])
-
+    @photo.is_thumbnail = false
     if @photo.save
       redirect_to [:admin, @photo_set], :notice => "Photo created"
     else

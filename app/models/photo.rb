@@ -4,5 +4,6 @@ class Photo < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
 
+  attr_accessible :title, :image
   validates :image, :presence => true
 end
