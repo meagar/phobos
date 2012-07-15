@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120704005610) do
+ActiveRecord::Schema.define(:version => 20120715184331) do
 
   create_table "contact_requests", :force => true do |t|
     t.string   "email"
@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(:version => 20120704005610) do
     t.integer  "position"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+    t.string   "sub_title"
   end
 
   add_index "photo_sets", ["created_by_id"], :name => "index_photo_sets_on_created_by_id"
