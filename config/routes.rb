@@ -20,7 +20,7 @@ Local27retirees::Application.routes.draw do
     get "who-we-are" => "pages#who_we_are"
   end
 
-  resources :photo_sets, :only => %w(index show) do
+  resources :gallery, :controller => "photo_sets", :as => "photo_sets", :only => %w(index show) do
     resources :photos, :only => %w(show)
   end
 
