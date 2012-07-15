@@ -12,7 +12,7 @@ class PhotoSetsController < ApplicationController
   protected
 
   def active_nav
-    "photos"
+    "Gallery"
   end
 end
 
