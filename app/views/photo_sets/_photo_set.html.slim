@@ -1,6 +1,6 @@
 
 li.span3.photo-set data-id=photo_set.id
-  = link_to photo_set, :class => "thumbnail" do
+  = link_to photo_set, :class => "thumbnail", :rel => "photo" do
     = image_tag(photo_set.thumbnail.try(:url,:thumb) || "/images/260x180.gif")
 
     .title
