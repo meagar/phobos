@@ -2,6 +2,8 @@
   h2 = news_post.blurb_subject.blank? ? news_post.subject : news_post.blurb_subject
   p.date = news_post.created_at.strftime("%B %-d %Y")
   = markdown news_post.blurb
-  - if news_post.body.any?
+  - if news_post.full_story_link
+    = link_to "Full Story...", news_post.full_story_link, :target => "_blank"
+  - elsif news_post.body.any?
     = link_to "Full Story...", news_post
 

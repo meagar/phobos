@@ -1,7 +1,7 @@
 class NewsPost < ActiveRecord::Base
   belongs_to :created_by, :class_name => "User"
 
-  attr_accessible :subject, :body, :blurb, :blurb_subject, :front_page_column
+  attr_accessible :subject, :body, :blurb, :blurb_subject, :front_page_column, :full_story_link
 
   validates :created_by, :presence => true
   validates :subject, :presence => true, :length => { :maximum => 255 }

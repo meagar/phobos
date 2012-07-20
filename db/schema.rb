@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120715184331) do
+ActiveRecord::Schema.define(:version => 20120720020428) do
 
   create_table "contact_requests", :force => true do |t|
     t.string   "email"
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(:version => 20120715184331) do
     t.text     "blurb"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
+    t.string   "full_story_link"
   end
 
   add_index "news_posts", ["created_by_id"], :name => "index_news_posts_on_created_by_id"
