@@ -6,26 +6,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//
+// --- vendor ---
 //= require jquery.colorbox
+//= require bootstrap
+//
 //= require_tree .
 
-(function ($) {
-  $.fn.sortable_gallery = function (options) {
-    $(this).sortable({
-      update: function () {
-        var ids = $(this).find('li').map(function () {
-          return $(this).data('id');
-        }).toArray();
-        $.post(options['url'], { "_method": "put", "order": ids }, function () { });
-      }
-    });
-  }
 
-})(jQuery);
-
-$(function () {
-  $('.alert').on('click', function (event) {
-    $(this).slideUp('slow');
-    event.preventDefault();
-  });
-});
