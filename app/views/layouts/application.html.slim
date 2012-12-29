@@ -1,26 +1,11 @@
-doctype 5
-html
-  head
-    title Local27retirees
 
-    = javascript_include_tag "application"
+= render :layout => "layouts/base" do
+  .container
 
-    = stylesheet_link_tag "/bootstrap/css/bootstrap"
-    = stylesheet_link_tag "/bootstrap/css/bootstrap-responsive"
-    = javascript_include_tag "/bootstrap/js/bootstrap"
+    = render "navbar"
 
-    = stylesheet_link_tag    "application"
-    = csrf_meta_tags
+    - if flash[:notice]
+      .alert.alert-success
+        = flash[:notice]
 
-
-    = javascript_include_tag "/javascripts/jquery-ui-1.8.21.custom.min.js"
-  body class=body_classes
-    .container
-
-      = render "partials/navbar"
-
-      - if flash[:notice]
-        .alert.alert-success
-          = flash[:notice]
-
-      = yield
+    = yield

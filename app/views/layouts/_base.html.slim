@@ -1,0 +1,14 @@
+- # Base layout
+- # Used by nested layouts
+doctype 5
+html
+  head
+    title Local 27 Retirees
+
+    = javascript_include_tag "application"
+    = stylesheet_link_tag    "application"
+    = csrf_meta_tags
+
+    = javascript_include_tag "/javascripts/jquery-ui-1.8.21.custom.min.js"
+  body class=body_classes
+    = yield
