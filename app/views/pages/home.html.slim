@@ -10,7 +10,7 @@
 .row
   .span8.news
     .row
-      = render :partial => "news_post", :collection => NewsPost.limit(2)
+      = render :partial => "news_post", :collection => NewsPost.order(:posted_at).limit(5)
 
   .span4
     .who-are-we
