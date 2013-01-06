@@ -60,12 +60,11 @@ ActiveRecord::Schema.define(:version => 20120720020428) do
   create_table "news_posts", :force => true do |t|
     t.string   "subject"
     t.text     "body"
-    t.integer  "front_page_column"
     t.integer  "created_by_id"
     t.string   "blurb_subject"
     t.text     "blurb"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
     t.string   "full_story_link"
   end
 

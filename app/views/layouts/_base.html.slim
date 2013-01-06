@@ -10,5 +10,9 @@ html
     = csrf_meta_tags
 
     = javascript_include_tag "/javascripts/jquery-ui-1.8.21.custom.min.js"
+
+    - if Rails.env.development?
+      = javascript_include_tag "https://gist.github.com/raw/4197363/refresh-css.js"
+
   body class=body_classes
     = yield

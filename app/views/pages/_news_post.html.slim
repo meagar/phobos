@@ -1,4 +1,4 @@
-.span3
+.span7.front-page-story
   h2 = news_post.blurb_subject.blank? ? news_post.subject : news_post.blurb_subject
   p.date = news_post.created_at.strftime("%B %-d %Y")
   = markdown news_post.blurb

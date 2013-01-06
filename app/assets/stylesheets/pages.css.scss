@@ -28,12 +28,34 @@ body {
       font-size:200%;
     }
     h3 {
-      font-size:120%;
+      font-size:100%;
     }
   }
-  .span3 {
-    text-align:justify;
+  .front-page-story {
+    margin-bottom:2em;
   }
+  .span3 {
+    text-align:left;
+  }
+  .labour-links {
+    ul {
+      padding:0; margin:0;
+    }
+
+    li {
+      list-style-type:none;
+      padding:0; margin:0;
+      text-align:center;
+    }
+    img {
+      margin:0 auto;
+    }
+
+  }
+  .who-are-we {
+    margin-bottom:2em;
+  }
+
   .gallery {
     padding-top:50px;
   }

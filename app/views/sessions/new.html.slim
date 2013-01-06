@@ -4,7 +4,7 @@
     h2 Returning Users
     p.instructions Login below with your email and password.
 
-    = form_for @user, :url => login_path, :method => :post, :html => { :class => "well form-horizontal" }, :builder => TwitterBootstrapFormBuilder do |f|
+    = form_for @user, :url => login_path, :method => :post, :html => { :class => "well form-horizontal" } do |f|
 
       = f.text_field :email, :label => "Email Address"
       = f.password_field :password
