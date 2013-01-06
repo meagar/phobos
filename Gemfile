@@ -16,6 +16,8 @@ gem 'redcarpet'
 gem 'rmagick'
 gem 'slim'
 gem 'therubyracer'
+gem 'twitter-bootstrap-form-builder', :git => "http://github.com/meagar/twitter-bootstrap-form-builder.git"
+#gem 'twitter-bootstrap-form-builder', :path => "vendor/gems/twitter-bootstrap-form-builder"
 
 # Gems used only for assets and not required
 # in production environments by default.
