@@ -15,6 +15,10 @@ class NewsPost < ActiveRecord::Base
 
   after_save :must_only_have_one_post_per_column
 
+  def url
+    full_story_link.blank? ? self : full_story_link
+  end
+
   protected
 
   def must_only_have_one_post_per_column
