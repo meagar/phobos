@@ -1,0 +1,8 @@
+
+.labour-links
+  ul.links
+    - @links.each do |link|
+      li
+        = link_to link.url  do
+          = image_tag link.image, :alt => link.alt
+
