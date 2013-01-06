@@ -1,24 +1,12 @@
 
 module ApplicationHelper
 
+  include MNE::TwitterBootstrapFormBuilder::Helper
+
   def markdown(text)
     @markdown ||= Redcarpet::Markdown.new(Redcarpet::Render::HTML,
         :autolink => true, :space_after_headers => true)
     @markdown.render(text).html_safe
-  end
-
-  def form_for (*args)
-    args << {} unless args.last.is_a? Hash
-
-    args.last[:builder] ||= TwitterBootstrapFormBuilder
-    args.last[:html] ||= {}
-    args.last[:html][:class] ||= ""
-
-    if !args.last[:html][:class].match(/form-(horizontal|vertical)/)
-      args.last[:html][:class] = ["form-horizontal", args.last[:html][:class]].join(" ")
-    end
-
-    super
   end
 
   def body_classes
