@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
 
   def home
-    @events = GoogleCalendar::events.first(4)
+    @events = GoogleCalendar::events.first(7)
 
     @links = [
       [ "New Union Project", "http://www.newunionproject.ca/", "new-union-logo.png" ],
