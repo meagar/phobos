@@ -1,3 +1,10 @@
+GIT
+  remote: http://github.com/meagar/twitter-bootstrap-form-builder.git
+  revision: 104e5d487a83fdffd02c37de79700fe2d385db03
+  specs:
+    twitter-bootstrap-form-builder (0.0.13)
+      dynamic_form (~> 1.1.4)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -134,4 +141,5 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   slim
   therubyracer
+  twitter-bootstrap-form-builder!
   uglifier (>= 1.0.3)

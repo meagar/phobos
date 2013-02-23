@@ -1,0 +1,14 @@
+= f.text_field :title
+= f.text_area :body
+= f.datetime_select :publish_on, :default => Time.now
+= f.select :format, article_format_options
+
+.buttons
+  = f.submit "Save"
+
+
+.preview
+  = render "show", :article => article
+
+javascript:
+  new ArticlePreviewer

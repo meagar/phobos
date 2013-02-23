@@ -35,6 +35,7 @@ Local27retirees::Application.routes.draw do
   #
 
   namespace :admin do
+    resources :articles
     resources :news_posts
     resources :forums
     resources :photo_sets do

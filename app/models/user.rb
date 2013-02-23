@@ -6,7 +6,9 @@ class User < ActiveRecord::Base
   has_many :photo_sets, :foreign_key => :created_by_id
   has_many :photos, :foreign_key => :created_by_id
 
-  has_many :news_posts, :foreign_key => :created_by_id
+  has_many :authored_articles, :class_name => "Article", :foreign_key => "author_id"
+
+  #has_many :news_posts, :foreign_key => :created_by_id
 
   has_secure_password
 
