@@ -4,8 +4,7 @@ module ApplicationHelper
   include MNE::TwitterBootstrapFormBuilder::Helper
 
   def markdown(text)
-    @markdown ||= Redcarpet::Markdown.new(Redcarpet::Render::HTML,
-        :autolink => true, :space_after_headers => true)
+    @markdown ||= Redcarpet::Markdown.new(Redcarpet::Render::HTML, :autolink => true)
     @markdown.render(text).html_safe
   end
 

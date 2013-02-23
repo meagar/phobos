@@ -2,6 +2,7 @@ class Article < ActiveRecord::Base
   FORMATS = %w(HTML Markdown)
 
   belongs_to :author, :class_name => "User"
+  has_many :attachments, :class_name => "ArticleAttachment"
 
   attr_accessible :body, :format, :title, :publish_on
 

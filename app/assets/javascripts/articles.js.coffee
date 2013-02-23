@@ -20,8 +20,7 @@ class window.ArticlePreviewer
     @$bodyOutput = @$preview.find(".body")
     @$format = $("#article_format")
 
-    @$format.bind "change", (event) =>
-      @$bodyInput.trigger "change"
+    @$format.bind "change", (event) => @$bodyInput.trigger "change"
 
     $(@$bodyInput, @$format).bind "change keyup", (event) =>
       format = @$format.val()
@@ -30,3 +29,8 @@ class window.ArticlePreviewer
         @$bodyOutput.html(@$bodyInput.val())
       else if format == "Markdown"
         @$bodyOutput.html(@showdown.makeHtml(@$bodyInput.val()))
+      else
+        alert "Unknown format (How'd you do that?)"
+
+    # Date
+    # TODO - recombine the various date boxes
