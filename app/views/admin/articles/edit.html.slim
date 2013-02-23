@@ -1,0 +1,6 @@
+
+h1 Edit Article
+
+= form_for [:admin, @article], :html => { :id => "article_form" } do |f|
+  = render "form", :article => @article, :f => f
+

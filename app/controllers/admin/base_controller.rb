@@ -1,5 +1,5 @@
 
-class Admin::Controller < ApplicationController
+class Admin::BaseController < ApplicationController
 
   before_filter :require_admin_user
 

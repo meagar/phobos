@@ -1,0 +1,9 @@
+h1.title = @article.title
+
+.by-line
+  | Posted by 
+  span.author = @article.author.display_name
+  | on 
+  span.date = @article.publish_on.to_s(:format => :short)
+
+.body = format_text(@article.body, @article.format)

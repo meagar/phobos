@@ -10,6 +10,7 @@
 // --- vendor ---
 //= require jquery.colorbox
 //= require bootstrap
+//= require showdown
 //
 //= require_tree .
 
