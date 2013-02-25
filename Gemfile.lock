@@ -1,16 +1,16 @@
 GIT
+  remote: http://github.com/meagar/GCal4Ruby.git
+  revision: ae864553f70c4a4e2ea6cb2ac36ef34d204da34d
+  specs:
+    gcal4ruby (0.5.6)
+      gdata4ruby (>= 0.1.5)
+
+GIT
   remote: http://github.com/meagar/twitter-bootstrap-form-builder.git
   revision: 104e5d487a83fdffd02c37de79700fe2d385db03
   specs:
     twitter-bootstrap-form-builder (0.0.13)
       dynamic_form (~> 1.1.4)
-
-GIT
-  remote: https://github.com/meagar/GCal4Ruby.git
-  revision: ae864553f70c4a4e2ea6cb2ac36ef34d204da34d
-  specs:
-    gcal4ruby (0.5.6)
-      gdata4ruby (>= 0.1.5)
 
 GEM
   remote: https://rubygems.org/
