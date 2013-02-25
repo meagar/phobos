@@ -10,7 +10,7 @@ gem 'carrierwave', '<= 0.6.1'
 gem 'dynamic_form'
 gem 'json'
 gem 'jquery-rails'
-gem 'gcal4ruby'
+gem 'gcal4ruby', :git => "https://github.com/meagar/GCal4Ruby.git"
 gem 'mysql2'
 gem 'redcarpet'
 gem 'rmagick'

@@ -24,13 +24,20 @@ class GoogleCalendar
     end
 
     def events
-      @events ||= calendar.
-        events(:orderby => "starttime", :sortorder => "ascending").
-        #reject { |e| e.status == :canceled}.
-        #uniq { |e| "#{e.title} #{e.start_time}" }.
-        sort_by(&:start_time)
+      @events ||= find_events
     end
 
+    def find_events
+      events = calendar.events("showhidden" => true, "futureevents" => "true", "max-results" => 30).reject { |e| e.status == :canceled || e.start_time < Time.now}
+
+      uniq_events = {}
+
+      events.inject({}) do |h,e|
+        uniq_events["#{e.title} #{e.start_time}"] = e
+      end
+
+      uniq_events.values.sort_by(&:start_time)
+    end
   end
 
 end
