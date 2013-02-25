@@ -3,23 +3,34 @@ class GoogleCalendar
 
   class << self
 
-    def calendar
-      return @calendar if @calendar
+    def auth
+      @auth ||= YAML::load_file(Rails.root.join("config", "google_calendar.yml"))[Rails.env]
+    end
 
-      auth = YAML::load_file(Rails.root.join("config", "google_calendar.yml"))[Rails.env]
+    def service
+      return @service if @service
 
-      service = GCal4Ruby::Service.new
+      @service = GCal4Ruby::Service.new
 
-      if !service.authenticate(auth["username"], auth["password"])
+      unless @service.authenticate(auth["username"], auth["password"])
         raise "Unable to authenticate with google calendar"
       end
 
-      @calendar = GCal4Ruby::Calendar.find(service, :title => auth["calendar"]).first
+      @service
+    end
+
+    def calendar
+      @calendar ||= GCal4Ruby::Calendar.find(service, :title => auth["calendar"]).try(:first)
     end
 
     def events
-      @events ||= self.calendar.events.reject { |c| c.start_time < Time.now || c.status == :canceled }.sort_by(&:start_time)
+      @events ||= calendar.
+        events(:orderby => "starttime", :sortorder => "ascending").
+        #reject { |e| e.status == :canceled}.
+        #uniq { |e| "#{e.title} #{e.start_time}" }.
+        sort_by(&:start_time)
     end
+
   end
 
 end
