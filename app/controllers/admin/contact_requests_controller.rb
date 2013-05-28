@@ -4,7 +4,7 @@ class Admin::ContactRequestsController < Admin::BaseController
   before_filter :find_contact_request, :only => %w(show update)
 
   def index
-    @contact_requests = ContactRequest.order(:created_at).all
+    @contact_requests = ContactRequest.order("created_at desc")
   end
 
   def show
