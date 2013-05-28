@@ -1,5 +1,5 @@
 
-class Admin::PhotosController < Admin::Controller
+class Admin::PhotosController < Admin::BaseController
 
   before_filter :find_photo_set, :only => %w(index sort new create)
   before_filter :find_photo, :only => %w(edit update destroy)

@@ -1,5 +1,5 @@
 
-class Admin::ForumsController < Admin::Controller
+class Admin::ForumsController < Admin::BaseController
 
   def index
     @forums = Forum.order(:position)

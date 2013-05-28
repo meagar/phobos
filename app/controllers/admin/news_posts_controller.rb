@@ -1,5 +1,5 @@
 
-class Admin::NewsPostsController < Admin::Controller
+class Admin::NewsPostsController < Admin::BaseController
 
   before_filter :find_news_post, :only => %w(show edit update destroy)
 

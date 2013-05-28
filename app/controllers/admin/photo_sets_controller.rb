@@ -1,5 +1,5 @@
 
-class Admin::PhotoSetsController < Admin::Controller
+class Admin::PhotoSetsController < Admin::BaseController
 
   before_filter :find_set, :only => %w(show edit update destroy)
 

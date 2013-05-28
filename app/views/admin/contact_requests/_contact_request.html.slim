@@ -1,0 +1,4 @@
+
+li
+  h2 = mail_to "#{contact_request.email}?subject=Local 27 Retirees Contact Request", "#{contact_request.name} <#{contact_request.email}>"
+  = simple_format contact_request.body
