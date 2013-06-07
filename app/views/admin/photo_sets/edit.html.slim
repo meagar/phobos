@@ -1,7 +1,7 @@
 
 h2 Edit Photo Set
 
-= form_for [:admin, @photo_set], :html => { :class => "form-horizontal" }, :builder => TwitterBootstrapFormBuilder do |f|
+= form_for [:admin, @photo_set] do |f|
   = render "form", :photo_set => @photo_set, :f => f
 
   .form-actions
