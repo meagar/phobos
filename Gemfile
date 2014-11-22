@@ -10,13 +10,13 @@ gem 'carrierwave', '<= 0.6.1'
 gem 'dynamic_form'
 gem 'json'
 gem 'jquery-rails'
-gem 'gcal4ruby', :git => "http://github.com/meagar/GCal4Ruby.git"
+gem 'gcal4ruby', :path => "vendor/gems/GCal4Ruby"
 gem 'mysql2'
 gem 'redcarpet'
 gem 'rmagick'
 gem 'slim'
 gem 'therubyracer'
-gem 'twitter-bootstrap-form-builder', :git => "http://github.com/meagar/twitter-bootstrap-form-builder.git"
+gem 'twitter-bootstrap-form-builder', :path => "vendor/gems/twitter-bootstrap-form-builder"
 #gem 'twitter-bootstrap-form-builder', :path => "vendor/gems/twitter-bootstrap-form-builder"
 
 # Gems used only for assets and not required

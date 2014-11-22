@@ -21,6 +21,8 @@ class GoogleCalendar
 
     def calendar
       @calendar ||= GCal4Ruby::Calendar.find(service, :title => auth["calendar"]).try(:first)
+    rescue GData4Ruby::HTTPRequestFailed
+      nil
     end
 
     def events
@@ -28,6 +30,7 @@ class GoogleCalendar
     end
 
     def find_events
+      return [] unless calendar
       events = calendar.events("showhidden" => true, "futureevents" => "true", "max-results" => 30).reject { |e| e.status == :canceled || e.start_time < Time.now}
 
       uniq_events = {}
